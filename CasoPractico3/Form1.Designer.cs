@@ -38,7 +38,7 @@ namespace CasoPractico3
             this.lblTamaño = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rbtnVerdana = new System.Windows.Forms.RadioButton();
             this.btnRojo = new System.Windows.Forms.Button();
             this.btnGreen = new System.Windows.Forms.Button();
             this.btnBlue = new System.Windows.Forms.Button();
@@ -58,6 +58,7 @@ namespace CasoPractico3
             this.button1.TabIndex = 0;
             this.button1.Text = "Salir";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblEscribeNombre
             // 
@@ -71,10 +72,18 @@ namespace CasoPractico3
             // 
             // tbNombre
             // 
+            this.tbNombre.AcceptsReturn = true;
+            this.tbNombre.AcceptsTab = true;
+            this.tbNombre.AccessibleDescription = "Campo de texto para introducir su nombre";
+            this.tbNombre.AllowDrop = true;
+            this.tbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNombre.ForeColor = System.Drawing.SystemColors.InfoText;
             this.tbNombre.Location = new System.Drawing.Point(126, 100);
             this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(407, 20);
+            this.tbNombre.Size = new System.Drawing.Size(407, 26);
             this.tbNombre.TabIndex = 2;
+            this.tbNombre.Text = "texto de prueba";
+            this.tbNombre.TextChanged += new System.EventHandler(this.tbNombre_TextChanged);
             // 
             // lblTipoLetra
             // 
@@ -123,9 +132,9 @@ namespace CasoPractico3
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(55, 17);
             this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Mistral";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
             // 
             // radioButton2
             // 
@@ -134,20 +143,22 @@ namespace CasoPractico3
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(64, 17);
             this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Tahoma";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged_1);
             // 
-            // radioButton3
+            // rbtnVerdana
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(126, 289);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(65, 17);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Verdana";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtnVerdana.AutoSize = true;
+            this.rbtnVerdana.Checked = true;
+            this.rbtnVerdana.Location = new System.Drawing.Point(126, 290);
+            this.rbtnVerdana.Name = "rbtnVerdana";
+            this.rbtnVerdana.Size = new System.Drawing.Size(65, 17);
+            this.rbtnVerdana.TabIndex = 4;
+            this.rbtnVerdana.TabStop = true;
+            this.rbtnVerdana.Text = "Verdana";
+            this.rbtnVerdana.UseVisualStyleBackColor = true;
+            this.rbtnVerdana.Click += new System.EventHandler(this.rbtnVerdana_Click);
             // 
             // btnRojo
             // 
@@ -157,6 +168,7 @@ namespace CasoPractico3
             this.btnRojo.Size = new System.Drawing.Size(28, 17);
             this.btnRojo.TabIndex = 5;
             this.btnRojo.UseVisualStyleBackColor = false;
+            this.btnRojo.Click += new System.EventHandler(this.btnRojo_Click);
             // 
             // btnGreen
             // 
@@ -166,6 +178,7 @@ namespace CasoPractico3
             this.btnGreen.Size = new System.Drawing.Size(28, 17);
             this.btnGreen.TabIndex = 5;
             this.btnGreen.UseVisualStyleBackColor = false;
+            this.btnGreen.Click += new System.EventHandler(this.btnGreen_Click);
             // 
             // btnBlue
             // 
@@ -175,6 +188,7 @@ namespace CasoPractico3
             this.btnBlue.Size = new System.Drawing.Size(28, 17);
             this.btnBlue.TabIndex = 5;
             this.btnBlue.UseVisualStyleBackColor = false;
+            this.btnBlue.Click += new System.EventHandler(this.btnBlue_Click);
             // 
             // textBox1
             // 
@@ -196,6 +210,8 @@ namespace CasoPractico3
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Location = new System.Drawing.Point(256, 266);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(60, 17);
@@ -224,6 +240,7 @@ namespace CasoPractico3
             0,
             0,
             0});
+            this.numUpDown.ValueChanged += new System.EventHandler(this.numUpDown_ValueChanged);
             // 
             // Form1
             // 
@@ -238,7 +255,7 @@ namespace CasoPractico3
             this.Controls.Add(this.btnBlue);
             this.Controls.Add(this.btnGreen);
             this.Controls.Add(this.btnRojo);
-            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.rbtnVerdana);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.lblTamaño);
@@ -268,7 +285,7 @@ namespace CasoPractico3
         private System.Windows.Forms.Label lblTamaño;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbtnVerdana;
         private System.Windows.Forms.Button btnRojo;
         private System.Windows.Forms.Button btnGreen;
         private System.Windows.Forms.Button btnBlue;
