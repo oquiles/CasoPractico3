@@ -221,7 +221,7 @@ namespace CasoPractico3
             this.checkBox3.TabIndex = 8;
             this.checkBox3.Text = "Subrayado";
             this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.checkBox3.Click += new System.EventHandler(this.checkBox3_Click);
             // 
             // checkBox2
             // 
@@ -232,7 +232,7 @@ namespace CasoPractico3
             this.checkBox2.TabIndex = 8;
             this.checkBox2.Text = "Negrita";
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.checkBox2.Click += new System.EventHandler(this.checkBox2_Click);
             // 
             // checkBox1
             // 
@@ -243,7 +243,7 @@ namespace CasoPractico3
             this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Cursiva";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1.Click += new System.EventHandler(this.checkBox1_Click_1);
             // 
             // Form1
             // 
